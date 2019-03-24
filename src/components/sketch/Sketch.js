@@ -12,18 +12,16 @@ export const Sketch = ({ width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
   const styles = reactCSS(merge({
     'default': {
       picker: {
-        width,
-        padding: '10px 10px 0',
-        boxSizing: 'initial',
-        background: '#fff',
-        borderRadius: '4px',
-        boxShadow: '0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15)',
+        width: '350px',
+        height: '350px',
+        borderRadius: '50%',
       },
       saturation: {
-        width: '100%',
-        paddingBottom: '75%',
         position: 'relative',
         overflow: 'hidden',
+        borderRadius: '50%',
+        width: '350px',
+        height: '350px',
       },
       Saturation: {
         radius: '3px',
@@ -114,24 +112,7 @@ export const Sketch = ({ width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
             />
           </div>
         </div>
-        <div style={ styles.color }>
-          <Checkboard />
-          <div style={ styles.activeColor } />
-        </div>
       </div>
-
-      <SketchFields
-        rgb={ rgb }
-        hsl={ hsl }
-        hex={ hex }
-        onChange={ onChange }
-        disableAlpha={ disableAlpha }
-      />
-      <SketchPresetColors
-        colors={ presetColors }
-        onClick={ onChange }
-        onSwatchHover={ onSwatchHover }
-      />
     </div>
   )
 }
